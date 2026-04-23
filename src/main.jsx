@@ -16,7 +16,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Job-Portal">  {/* 👈 ADD THIS */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
