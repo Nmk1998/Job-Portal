@@ -1,0 +1,132 @@
+/* BACKDROP */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(13, 27, 42, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* BOX */
+.modal-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 40px 32px;
+  width: 100%; max-width: 460px;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+  animation: slideUp 0.25s ease;
+}
+@keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+/* CLOSE */
+.modal-close {
+  position: absolute; top: 16px; right: 16px;
+  background: #f0f0f0; border: none; cursor: pointer;
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 0.85rem; color: #666;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: #e0e0e0; }
+
+/* LOGO */
+.modal-logo {
+  font-size: 1.3rem; font-weight: 800; color: #0d1b2a;
+  margin-bottom: 24px; text-align: center;
+}
+
+/* TABS */
+.modal-tabs {
+  display: flex; background: #f8f9fb;
+  border-radius: 12px; padding: 4px;
+  margin-bottom: 28px;
+}
+.modal-tab {
+  flex: 1; padding: 10px; border: none; background: transparent;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600; font-size: 0.9rem; color: #9aa3b0;
+  border-radius: 10px; cursor: pointer; transition: all 0.2s;
+}
+.modal-tab.active {
+  background: #fff; color: #0d1b2a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+.modal-form { display: flex; flex-direction: column; gap: 16px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label {
+  font-size: 0.85rem; font-weight: 600; color: #cf5311;
+}
+.field input {
+  border: 1.5px solid #eef0f4; border-radius: 10px;
+  padding: 12px 16px; font-size: 0.95rem;
+  font-family: 'Inter', system-ui, sans-serif; color: #0d1b2a;
+  outline: none; transition: border-color 0.2s;
+  background: #fafafa;
+}
+.field input:focus { border-color: #f05a22; background: #fff; }
+.error { font-size: 0.78rem; color: #e03e0b; font-weight: 500; }
+
+.forgot { text-align: right; margin-top: -8px; }
+.forgot a { font-size: 0.82rem; color: #f05a22; text-decoration: none; font-weight: 500; }
+.forgot a:hover { text-decoration: underline; }
+
+/* SUBMIT */
+.btn-submit {
+  background: #f05a22; color: #fff;
+  border: none; border-radius: 12px;
+  padding: 14px; font-size: 1rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700; cursor: pointer;
+  transition: all 0.2s; margin-top: 4px;
+}
+.btn-submit:hover { background: #d44d17; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(240,90,34,0.4); }
+
+/* DIVIDER */
+.or-divider {
+  display: flex; align-items: center; gap: 12px;
+  color: #9aa3b0; font-size: 0.8rem;
+}
+.or-divider::before, .or-divider::after {
+  content: ''; flex: 1; height: 1px; background: #eef0f4;
+}
+
+/* SOCIAL */
+.social-row { display: flex; gap: 10px; }
+.social-btn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1.5px solid #eef0f4; background: #fff; border-radius: 10px;
+  padding: 10px 8px; font-size: 0.82rem; font-weight: 600; color: #0d1b2a;
+  cursor: pointer; font-family: 'Inter', system-ui, sans-serif;
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: #f05a22; background: #fff7f4; }
+
+/* SWITCH */
+.switch-text {
+  text-align: center; font-size: 0.85rem; color: #9aa3b0; margin-top: 4px;
+}
+.switch-text button {
+  background: none; border: none; color: #f05a22;
+  font-weight: 600; cursor: pointer; font-family: inherit; font-size: inherit;
+}
+.switch-text button:hover { text-decoration: underline; }
+
+/* SUCCESS */
+.modal-success {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 12px; padding: 16px 0;
+}
+.success-icon { font-size: 3rem; }
+.modal-success h3 { font-size: 1.4rem; font-weight: 800; color: #0d1b2a; }
+.modal-success p { color: #9aa3b0; font-size: 0.95rem; margin-bottom: 8px; }
+
+@media (max-width: 480px) {
+  .modal-box { padding: 28px 20px 24px; }
+  .social-row { flex-direction: column; }
+}
